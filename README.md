@@ -1,31 +1,42 @@
-# ▲ / next-forge
+# Turborepo Monorepo Setup & Run Guide
 
-**Production-grade Turborepo template for Next.js apps.**
+This project is a **monorepo** built using [Turborepo](https://turbo.build/repo) and managed with [pnpm](https://pnpm.io/).
 
-<div>
-  <img src="https://img.shields.io/npm/dy/next-forge" alt="" />
-  <img src="https://img.shields.io/npm/v/next-forge" alt="" />
-  <img src="https://img.shields.io/github/license/vercel/next-forge" alt="" />
-</div>
+Follow the steps below to clone, install, configure, and run the project locally.
 
-## Overview
+---
 
-[next-forge](https://github.com/vercel/next-forge) is a [Next.js](https://nextjs.org/) project boilerplate for modern web application. It is designed to be a comprehensive starting point for new apps, providing a solid, opinionated foundation with a minimal amount of configuration.
+## 📦 Prerequisites
 
-## Getting Started
+- **Node.js** v20 or later installed → [Download Node.js](https://nodejs.org/)
+- **pnpm** package manager installed globally
 
-Clone the repo using:
+```bash
+npm install -g pnpm
 
-```sh
-npx next-forge@latest init
-```
+🚀 Setup Instructions
+1️⃣ Clone the Repository
 
-Then read the [docs](https://www.next-forge.com/docs) for more information.
+git clone https://github.com/rajnishk28/turborepo.git
 
-## Contributors
+cd turborepo
 
-<a href="https://github.com/vercel/next-forge/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=vercel/next-forge" />
-</a>
+### 2️⃣ Install Dependencies
 
-Made with [contrib.rocks](https://contrib.rocks).
+Run the following command at the root of the project to install all required packages:
+
+pnpm install
+
+### 3️⃣ Setup Environment Variables
+
+Go to the **web** folder and create a new file named **.env.local**.  
+Open the existing **.env.sample** file, copy all of its content, and paste it inside **.env.local**.  
+
+Then, update the values in **.env.local** according to your local configuration.
+
+
+4️⃣ Run the Web Application
+
+Start the web application in development mode:
+
+pnpm --filter web dev

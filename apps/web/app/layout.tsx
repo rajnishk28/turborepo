@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./styles.css";
 
 export const metadata: Metadata = {
-  title: "pycry",
+  title: "pycray Tech",
   description: "Simple homepage using Next.js & Tailwind",
 };
 
