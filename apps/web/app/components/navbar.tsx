@@ -1,19 +1,28 @@
-import React from 'react'
+"use client";
+
+import Link from "next/link";
+import React from "react";
 
 const Navbar = () => {
   return (
-   
-      <header className="w-full bg-blue-600 text-white p-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <h1 className="text-xl font-bold">My Website</h1>
-          <nav className="space-x-4">
-            <a href="/" className="hover:text-gray-200">Home</a>
-            <a href="/about" className="hover:text-gray-200">About</a>
-            <a href="/contatc" className="hover:text-gray-200">Contact</a>
-          </nav>
-        </div>
-      </header>
-  )
-}
+    <header className="relative z-10 max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <Link href="/">
+        <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          🚀 MyWebsite
+        </h1>
+      </Link>
 
-export default Navbar
+      {/* Gap fix here */}
+      <nav className="flex items-center gap-6">
+        <Link href="/" className="text-gray-700 hover:text-blue-600 transition">
+          Home
+        </Link>
+        <Link href="/events" className="text-gray-700 hover:text-blue-600 transition">
+          Events
+        </Link>
+      </nav>
+    </header>
+  );
+};
+
+export default Navbar;

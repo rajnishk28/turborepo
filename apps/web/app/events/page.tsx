@@ -11,16 +11,18 @@ type Event = {
 };
 
 export default function EventsPage() {
-  const [events, setEvents] = useState<Event[]>([]);
+  const [events, setEvents] = useState<Event[]>(() => {
+    try {
+      const stored = localStorage.getItem("events");
+      return stored ? (JSON.parse(stored) as Event[]) : [];
+    } catch {
+      return [];
+    }
+  });
   const [eventName, setEventName] = useState("");
   const [eventDate, setEventDate] = useState("");
   const [search, setSearch] = useState("");
 
-  // Load from localStorage
-  useEffect(() => {
-    const stored = localStorage.getItem("events");
-    if (stored) setEvents(JSON.parse(stored));
-  }, []);
 
   // Save to localStorage whenever events change
   useEffect(() => {
